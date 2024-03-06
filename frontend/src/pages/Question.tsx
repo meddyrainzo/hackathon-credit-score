@@ -165,16 +165,28 @@ function Question() {
           <Card selected={atmComplete}>Atm</Card>
         </StatusWrapper>
         <Spacer height={32} />
-        <Subtitle>
-          {quizQuestions[currentCategory].Title} - Question{' '}
-          {currentCategoryQuestion + 1}
-        </Subtitle>
-        <Info>
-          {
-            quizQuestions[currentCategory].Questions[currentCategoryQuestion]
-              ?.Question
-          }
-        </Info>
+        {quizQuestions[currentCategory].Questions[currentCategoryQuestion] ? (
+          <>
+            <Subtitle>
+              {quizQuestions[currentCategory].Title} - Question{' '}
+              {currentCategoryQuestion + 1}
+            </Subtitle>
+            <Info>
+              {
+                quizQuestions[currentCategory].Questions[
+                  currentCategoryQuestion
+                ]?.Question
+              }
+            </Info>
+          </>
+        ) : (
+          <>
+            <Subtitle>
+              Quiz completed! Please click on finish to get your estimated score
+            </Subtitle>
+          </>
+        )}
+
         <Spacer height={16} />
         <AnswersWrapper>{renderAnswers()}</AnswersWrapper>
       </Page>
