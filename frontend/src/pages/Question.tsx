@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Page from './Page';
 import { Body, Info, Subtitle, Title } from '../components/fonts';
 import { quizQuestions } from '../data/data';
