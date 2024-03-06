@@ -183,6 +183,7 @@ function Question() {
           <>
             <Subtitle>
               Quiz completed! Please click on finish to get your estimated score
+              🎉🎉
             </Subtitle>
           </>
         )}
