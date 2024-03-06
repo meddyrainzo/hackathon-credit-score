@@ -43,7 +43,6 @@ function Question() {
       setShowPreviousButton(true);
     }
     const category = quizQuestions[currentCategory];
-    console.log('category.Category', category.Category);
     switch (category.Category) {
       case 'EDM':
         dispatch(
@@ -88,9 +87,7 @@ function Question() {
     }
     const questionNumber = currentCategoryQuestion + 1;
     setCurrentCategoryQuestion(questionNumber);
-    console.log('The next question', questionNumber);
     if (category.Questions.length - currentCategoryQuestion === 1) {
-      console.log('In if block');
       if (currentCategory === 4) {
         // Finished the quiz
         setShowFinishButton(true);
@@ -98,7 +95,6 @@ function Question() {
         if (showFinishButton) {
           setShowFinishButton(false);
         }
-        console.log('Change the category');
         setCurrentCategory(currentCategory + 1);
         setCurrentCategoryQuestion(0);
       }
@@ -122,7 +118,6 @@ function Question() {
   };
 
   useEffect(() => {
-    console.log('edmAnswers.length', edmAnswers.length);
     setEdmComplete(edmAnswers.length === edmQuestions.Questions.length);
     setScrComplete(scrAnswers.length === scrQuestions.Questions.length);
     setConComplete(conAnswers.length === conQuestions.Questions.length);
